@@ -48,8 +48,8 @@ export class Main {
     switch (parseInt(answer.value)) {
       case 1:
         this.chooseMap();
+        console.log("test");
         break;
-
       case 2:
         let newMap: Map = new Map;
         newMap.createMap();
@@ -81,6 +81,7 @@ export class Main {
 
   // menu to show all maps which are currently in the JSON file to pick to play
   public async chooseMap(): Promise<void> {
+    console.log("test2");
     let mapArray: string[] = [];
     let allMap: mapDao[] = fileHandler.readFile("./JSONFile/", "mapJSON.json");
     for (let i: number = 0; i < allMap.length; i++) {
