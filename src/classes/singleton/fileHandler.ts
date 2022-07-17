@@ -13,21 +13,23 @@ class FileHandler {
     return FileHandler._instance
   }
 
-  public writeFile(dataToWrite: any, pathToFile: string, file: string) {
-    if(!existsSync(pathToFile))
-      mkdirSync(pathToFile)
+  // write datta to a file
+  public writeFile(_dataToWrite: any, _pathToFile: string, _file: string) {
+    if(!existsSync(_pathToFile))
+      mkdirSync(_pathToFile)
 
-    writeFileSync(pathToFile + file, JSON.stringify(dataToWrite))
+    writeFileSync(_pathToFile + _file, JSON.stringify(_dataToWrite))
     
   }
 
-  public readFile(pathToFile: string, file: string) : any {
-    if(!existsSync(pathToFile)) {
+  // read data out of a file 
+  public readFile(_pathToFile: string, _file: string) : any {
+    if(!existsSync(_pathToFile)) {
       console.log("Dateipfad existiert nicht! Datei kann nicht gelesen werden!")
       return ""
     }
 
-    let raw : Buffer = readFileSync(pathToFile + file);
+    let raw : Buffer = readFileSync(_pathToFile + _file);
     return JSON.parse(raw.toString())
   }
 }
