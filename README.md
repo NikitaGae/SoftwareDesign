@@ -12,13 +12,8 @@ https://github.com/NikitaGae/SoftwareDesign
 * Node Package Manager
 * Visual Studio Code or something similiar
 
-<<<<<<< HEAD
-<!-- How to Play -->
-## How to Play
-=======
 <!-- How to play -->
 ## How to play
->>>>>>> master
 
 * Download all files from the repository
 * Use npm install to get missing files
