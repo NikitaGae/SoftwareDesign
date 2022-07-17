@@ -3,10 +3,10 @@ export class mapDao{
     public spawnPointX: number;
     public spawnPointY: number;
     public places: string[][];
-    public constructor(_title: string, _spawnPointX: number, _spawnPointY: number, _map: string[][])   {
+    public constructor(_title: string, _spawnPointX: number, _spawnPointY: number, _places: string[][])   {
         this.title = _title;
         this.spawnPointX = _spawnPointX;
         this.spawnPointY = _spawnPointY;
-        this.places = _map;
+        this.places = _places;
     }
 }

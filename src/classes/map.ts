@@ -12,18 +12,18 @@ export class Map {
         let spawnPointY: number = 0;
         let x: Answers<string> = await consoleHandling.getAnswer("Enter X Value of map:", "text");
         let y: Answers<string> = await consoleHandling.getAnswer("Enter Y Value of map:", "text");
-        let map: string[][] = [];
+        let places: string[][] = [];
         // asks the user the names for every coordinate
         for (let i: number = 0; i < parseInt(x.value); i++) {
-            map[i] = [];
+            places[i] = [];
             for (let j: number = 0; j < parseInt(y.value); j++) {
                 let name: Answers<string> = await consoleHandling.getAnswer("Enter name of coordinate [" + i + "," + j + "]: ", "text");
                 //load the user inputs you got into the array
-                map[i][j] = name.value;
+                places[i][j] = name.value;
             }
         }
         // load all attributes for a map into level from type mapDao and write it into the JSON
-        let level: mapDao = new mapDao(title.value, spawnPointX, spawnPointY, map);
+        let level: mapDao = new mapDao(title.value, spawnPointX, spawnPointY, places);
         let allMaps: mapDao[] = fileHandler.readFile("./JSONFile/", "mapJSON.json")
         allMaps.push(level);
         fileHandler.writeFile(allMaps, "./JSONFile/", "mapJSON.json");
